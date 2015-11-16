@@ -1,0 +1,1 @@
+"./ptd_driver.obj" "./startup_ccs.obj" "../uart_echo_ccs.cmd" -l"libc.a" -l"C:/CCS_v6/tivaware/examples/boards/ek-tm4c123gxl/uart_echo/ccs/../../../../../driverlib/ccs/Debug/driverlib.lib" 

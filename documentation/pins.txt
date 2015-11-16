@@ -1,0 +1,10 @@
+Using UARTS 5 and 7 on Tiva-C.
+	Uart 5: GPS MODULE
+		Rx: PE4
+		Tx: PE5
+	Uart 7: CELL MODULE
+		Rx: PE0
+		Tx: PE1
+
+		Cell Module Power Status pin PB0
+		Cell Module Key pin PF1
