@@ -1,0 +1,40 @@
+\contentsline {section}{\numberline {1}Scope}{1}
+\contentsline {subsection}{\numberline {1.1}General}{1}
+\contentsline {section}{\numberline {2}Applicable Documents}{1}
+\contentsline {subsection}{\numberline {2.1}Government Documents}{1}
+\contentsline {section}{\numberline {3}Requirements}{1}
+\contentsline {subsection}{\numberline {3.1}Item Definitions}{1}
+\contentsline {subsubsection}{\numberline {3.1.1}Interface Description/Functional Block Diagram}{2}
+\contentsline {subsection}{\numberline {3.2}Characteristics}{2}
+\contentsline {subsubsection}{\numberline {3.2.1}Performance Characteristics}{2}
+\contentsline {paragraph}{\numberline {3.2.1.1}Physical Characteristics}{2}
+\contentsline {subparagraph}{\numberline {3.2.1.1.1}}{2}
+\contentsline {paragraph}{\numberline {3.2.1.2}Electrical Characteristics}{2}
+\contentsline {subparagraph}{\numberline {3.2.1.2.1}}{2}
+\contentsline {subparagraph}{\numberline {3.2.1.2.2}}{2}
+\contentsline {subsubsection}{\numberline {3.2.2}Environmental Characteristics}{2}
+\contentsline {paragraph}{\numberline {3.2.2.1}Natural Characteristics}{2}
+\contentsline {subparagraph}{\numberline {3.2.2.1.1}}{2}
+\contentsline {paragraph}{\numberline {3.2.2.2}Induced Environment Characteristics}{2}
+\contentsline {subparagraph}{\numberline {3.2.2.2.1}}{2}
+\contentsline {subparagraph}{\numberline {3.2.2.2.2}}{3}
+\contentsline {subparagraph}{\numberline {3.2.2.2.3}}{3}
+\contentsline {subsection}{\numberline {3.3}Electromagnetic Interference}{3}
+\contentsline {section}{\numberline {4}Verification}{3}
+\contentsline {subsection}{\numberline {4.1}Item Definitions}{3}
+\contentsline {subsubsection}{\numberline {4.1.1}Interface Description/Functional Block Diagram}{3}
+\contentsline {subsection}{\numberline {4.2}Characteristics}{3}
+\contentsline {subsubsection}{\numberline {4.2.1}Performance Characteristics}{3}
+\contentsline {paragraph}{\numberline {4.2.1.1}Physical Characteristics}{3}
+\contentsline {subparagraph}{\numberline {4.2.1.1.1}}{3}
+\contentsline {paragraph}{\numberline {4.2.1.2}Electrical Characteristics}{3}
+\contentsline {subparagraph}{\numberline {4.2.1.2.1}}{3}
+\contentsline {subparagraph}{\numberline {4.2.1.2.2}}{3}
+\contentsline {subsubsection}{\numberline {4.2.2}Environmental Characteristics}{3}
+\contentsline {paragraph}{\numberline {4.2.2.1}Natural Characteristics}{3}
+\contentsline {subparagraph}{\numberline {4.2.2.1.1}}{3}
+\contentsline {paragraph}{\numberline {4.2.2.2}Induced Characteristics}{3}
+\contentsline {subparagraph}{\numberline {4.2.2.2.1}}{3}
+\contentsline {subparagraph}{\numberline {4.2.2.2.2}}{3}
+\contentsline {subparagraph}{\numberline {4.2.2.2.3}}{4}
+\contentsline {subsection}{\numberline {4.3}Electromagnetic Interference}{4}

@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{listings}
+\usepackage[titletoc,title]{appendix}
+\usepackage{float}
+
+\setcounter{secnumdepth}{5}
+
+\begin{document}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{titlepage}
+\begin{center}
+
+~\\[4cm]
+
+\textsc{\Large \textsc{Utah State University} }\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Passive Tracking Device \\ -- Senior Project -- \\ Specifications Document \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author
+\noindent
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\textsc{ Dallin Marshall }
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\textsc{ Computer Engineering }
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+
+% \textcolor{white, black, red, green, blue, cyan, magenta, yellow} {text}
+% \section*{text}
+% \subsection*{text}
+% \subsubsection*{text}
+% \begin{enumerate/itemize}
+% \begin{center} \includegraphics[scale=0.4]{path.png}\end{center}
+% \lstinputlisting[language=Matlab, basicstyle=\footnotesize, firstline=40, lastline=81]{Matlab_Diary.txt}
+%
+%\begin{figure}
+%   \centering
+%       \includegraphics[scale=0.4]{Circuit_Schmatic.png}
+%   \caption{Circuit Schematic}
+%\end{figure}
+%
+%   \begin{figure}[H]
+%       \centering
+%           \begin{minipage}[b]{0.45\linewidth}
+%               \includegraphics[scale=0.3]{./Fan_Data/Data2/AllFansA.png}
+%               \caption{All three Fans 100\%}
+%               \label{fig:minipage1}
+%           \end{minipage}
+%           \quad
+%           \begin{minipage}[b]{0.45\linewidth}
+%               \includegraphics[scale=0.3]{./Fan_Data/Data2/Fans1_2.png}
+%               \caption{Fans 1 and 2 100\%}
+%               \label{fig:minipage2}
+%           \end{minipage}
+%   \end{figure}
+
+
+\thispagestyle{empty}
+\tableofcontents
+%\pagebreak
+\vspace{2cm}
+
+\thispagestyle{empty}
+\listoffigures
+%\listoftables
+\pagebreak
+
+\pagenumbering{arabic}
+
+\section{Scope}
+This document outlines the specification of a passive tracking solution that could be used by enterprise level clients to track a 
+large fleet of vehicles both ATVs or automobiles. This type of passive solution provides another alternative to companies wanting to track 
+their fleet of vehicles that is both cheaper and less power intensive than other active tracking solutions.
+
+\subsection{General}
+This specification establishes the design, construction, performance, development, and test requirements for the passive tracking device, 
+herein referred to as the PTD. Another focus of this project is to create a proof of concept that is compact enough to be contained within an ATV 
+and use the ATVs battery to power the PTD. Many times it is difficult for companies to manage the location of their ATVs when they are used by 
+a collective group of employees. This can make it difficult to know if the ATVs are really unaccounted for or merely being used by another 
+employee.
+
+\section{Applicable Documents}
+The following documents of the exact issue shown shall form part of this specificaion to the extent specified herein. In the event of 
+conflict between the requirements of this specification and any referenced document the order of precedence shall be 1. The contract, 
+2. This specification, 3. Referenced documents.
+
+\subsection{Government Documents}
+The regulations in the following documents shall be met to allow the PTD to be legally used in most of North America (US and Canada).
+\begin{itemize}
+    \item The United States (US) FCC Part 15-2008.
+    \item Canada's Industry Canada ICES-003:2004 Issue 4.
+\end{itemize}
+
+\section{Requirements}
+This section outlines the requirements and specifications of the PTD. 
+
+\subsection{Item Definitions}
+The PTD will likely consist of 4 main subsystems, namely:
+\begin{itemize}
+    \item Cell Network Interface
+    \item Global Positioning System
+    \item Controller Circuit
+    \item Power Converter/Regulator
+\end{itemize}
+The PTD system will be a passive system, meaning that the PTD will power down to a very low power state while not in use. At an appointed 
+trigger it will power up and transmit it's location to the PTDs owner via a cell network. There is no plan for the owner of the PTD to be able to 
+activate the device externally. The PTD shall opperate in this power-up, transmit location, power-down sequence.
+
+\subsubsection{Interface Description/Functional Block Diagram}
+
+%   \paragraph{Physical Interface Definitions}
+
+%   \paragraph{Electrical Interface Definitions}
+
+%   \paragraph{Functional Interface Definitions}
+
+\subsection{Characteristics}
+The following section provides a technical summary of the PTD's characteristics.
+
+\subsubsection{Performance Characteristics}
+
+\paragraph{Physical Characteristics} ~ \par 
+The PTD shall meet the following physical requeirements:
+    \subparagraph{} \hangindent=4cm The PTD shall conform to the following form factor: 16cm by 8cm by 5cm 
+
+\paragraph{Electrical Characteristics} ~ \par 
+The PTD shall meet the following electrical requirements:
+    \subparagraph{} \hangindent=4cm The PTD shall operate using the power provided by a standard ATV battery, specifically, 12V 11Ah battery.
+    \subparagraph{} \hangindent=4cm For the purposes of proof of concept the PTD may make use of a breadboard to connect the components.
+
+\subsubsection{Environmental Characteristics}
+
+\paragraph{Natural Characteristics}
+The PTD shall meet the following natural evironmental characteristics. The PTD shall meet the requirements of this specification during and 
+after exposure to any combination of any of the following natural environments. The PTD may be packaged to precluded exposure to any 
+environments that would control the design.
+    \subparagraph{} \hangindent=4cm The PTD shall function between 0$^{\circ}$ C and 40$^{\circ}$ C
+
+\paragraph{Induced Environment Characteristics}
+The PTD shall meet the following induced evironmental characteristics. The PTD shall meet the requirements of this specification during 
+and after exposure to any combination of any of the following induced environments. The PTD may be packaged to precluded exposure to any 
+environments that would control the design.
+    \subparagraph{} \hangindent=4cm The PTD shall withstand mechanical shocks of 3 ft drop test 5 times onto concrete.
+    \subparagraph{} \hangindent=4cm The PTD shall withstand vibrations of 1 ocilations per second with an amplitude of 1.5cm for 1 hour.
+    \subparagraph{} \hangindent=4cm The PTD shall function in a dusty environment, specifically, the shock and vibration tests shall be repeated 
+after 15 grams of fine sand is applied to the device. 
+
+\subsection{Electromagnetic Interference}
+The PTD shall conform to the standards found in the \textit{Applicable Documents} section of this document.
+
+
+\section{Verification}
+
+\subsection{Item Definitions}
+
+\subsubsection{Interface Description/Functional Block Diagram}
+
+%   \paragraph{Physical Interface Definitions}
+
+%   \paragraph{Electrical Interface Definitions}
+
+%   \paragraph{Functional Interface Definitions}
+
+\subsection{Characteristics}
+
+\subsubsection{Performance Characteristics}
+
+\paragraph{Physical Characteristics}
+    \subparagraph{} \hangindent=4cm The PTD shall be placed in an small box of dimention stated in requirements.
+
+\paragraph{Electrical Characteristics}
+    \subparagraph{} \hangindent=4cm The PTD shall function with only the power provied by an ATV battery. The PTD shall also be tested while the 
+ATV's engine is actively running and under normal operation.
+    \subparagraph{} \hangindent=4cm The PTD shall have connections that function in any manner.
+
+\subsubsection{Environmental Characteristics}
+
+\paragraph{Natural Characteristics}
+    \subparagraph{} \hangindent=4cm The PTD shall be tested for full functionality at both ends of the temperature spectrum.
+
+\paragraph{Induced Characteristics}
+    \subparagraph{} \hangindent=4cm The PTD shall function after the drop tests.
+    \subparagraph{} \hangindent=4cm The PTD shall function after the viberation test is performed
+    \subparagraph{} \hangindent=4cm The PTD shall function after the dust test is performed.
+
+\subsection{Electromagnetic Interference}
+The EMI shall be measured and shall meet the requirements found in the \textit{Applicable Documents} section of this document.
+
+\end{document}
+
+
