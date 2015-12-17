@@ -5,10 +5,21 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{listings}
-\usepackage[titletoc,title]{appendix}
+%\usepackage[titletoc,title]{appendix}
 \usepackage{float}
 
 \setcounter{secnumdepth}{5}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.0001pt \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.0001pt \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \begin{document}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -81,11 +92,12 @@
 \tableofcontents
 %\pagebreak
 \vspace{2cm}
-
-\thispagestyle{empty}
-\listoffigures
-%\listoftables
 \pagebreak
+
+%\thispagestyle{empty}
+%\listoffigures
+%%\listoftables
+%\pagebreak
 
 \pagenumbering{arabic}
 
@@ -119,10 +131,12 @@ This section outlines the requirements and specifications of the PTD.
 \subsection{Item Definitions}
 The PTD will likely consist of 4 main subsystems, namely:
 \begin{itemize}
-    \item Cell Network Interface
-    \item Global Positioning System
-    \item Controller Circuit
-    \item Power Converter/Regulator
+    \item Controller Circuit -- The Controller Circuit shall act as an intermedary between the GPS and Cell Modules. I will be 
+        responsible for directing the other modules to perform their functions at a specified time.
+    \item Cell Network Interface -- The Cell Network Interface shall transmit the GPS data to the client via SMS messages.
+    \item Global Positioning System -- The GPS shall calulate geographical location and transmit this data to Controller Circuit.
+    \item Power Converter/Regulator -- The Power Converter/Regulator shall provide needed voltage and amperage from the ATV battery to 
+        power the PTD.
 \end{itemize}
 The PTD system will be a passive system, meaning that the PTD will power down to a very low power state while not in use. At an appointed 
 trigger it will power up and transmit it's location to the PTDs owner via a cell network. There is no plan for the owner of the PTD to be able to 
@@ -143,12 +157,12 @@ The following section provides a technical summary of the PTD's characteristics.
 
 \paragraph{Physical Characteristics} ~ \par 
 The PTD shall meet the following physical requeirements:
-    \subparagraph{} \hangindent=4cm The PTD shall conform to the following form factor: 16cm by 8cm by 5cm 
+    \subparagraph{Form Factor}  The PTD shall conform to the following form factor: 16cm by 8cm by 5cm 
 
 \paragraph{Electrical Characteristics} ~ \par 
 The PTD shall meet the following electrical requirements:
-    \subparagraph{} \hangindent=4cm The PTD shall operate using the power provided by a standard ATV battery, specifically, 12V 11Ah battery.
-    \subparagraph{} \hangindent=4cm For the purposes of proof of concept the PTD may make use of a breadboard to connect the components.
+    \subparagraph{Power Constraints}  The PTD shall operate using the power provided by a standard ATV battery, specifically, 12V 11Ah battery.
+    \subparagraph{Prototype Connections}  For the purposes of proof of concept the PTD may make use of a breadboard to connect the components.
 
 \subsubsection{Environmental Characteristics}
 
@@ -156,15 +170,15 @@ The PTD shall meet the following electrical requirements:
 The PTD shall meet the following natural evironmental characteristics. The PTD shall meet the requirements of this specification during and 
 after exposure to any combination of any of the following natural environments. The PTD may be packaged to precluded exposure to any 
 environments that would control the design.
-    \subparagraph{} \hangindent=4cm The PTD shall function between 0$^{\circ}$ C and 40$^{\circ}$ C
+    \subparagraph{Temperature Rating}  The PTD shall function between 0$^{\circ}$ C and 40$^{\circ}$ C
 
 \paragraph{Induced Environment Characteristics}
 The PTD shall meet the following induced evironmental characteristics. The PTD shall meet the requirements of this specification during 
 and after exposure to any combination of any of the following induced environments. The PTD may be packaged to precluded exposure to any 
 environments that would control the design.
-    \subparagraph{} \hangindent=4cm The PTD shall withstand mechanical shocks of 3 ft drop test 5 times onto concrete.
-    \subparagraph{} \hangindent=4cm The PTD shall withstand vibrations of 1 ocilations per second with an amplitude of 1.5cm for 1 hour.
-    \subparagraph{} \hangindent=4cm The PTD shall function in a dusty environment, specifically, the shock and vibration tests shall be repeated 
+    \subparagraph{Shock Test}  The PTD shall withstand mechanical shocks of 3 ft drop test 5 times onto concrete.
+    \subparagraph{Vibration Test}  The PTD shall withstand vibrations of 1 ocilations per second with an amplitude of 1.5cm for 1 hour.
+    \subparagraph{Dust Test}  The PTD shall function in a dusty environment, specifically, the shock and vibration tests shall be repeated 
 after 15 grams of fine sand is applied to the device. 
 
 \subsection{Electromagnetic Interference}
@@ -188,22 +202,22 @@ The PTD shall conform to the standards found in the \textit{Applicable Documents
 \subsubsection{Performance Characteristics}
 
 \paragraph{Physical Characteristics}
-    \subparagraph{} \hangindent=4cm The PTD shall be placed in an small box of dimention stated in requirements.
+    \subparagraph{Form Factor}  The PTD shall be placed in an small box of dimention stated in requirements.
 
 \paragraph{Electrical Characteristics}
-    \subparagraph{} \hangindent=4cm The PTD shall function with only the power provied by an ATV battery. The PTD shall also be tested while the 
+    \subparagraph{Power Constraints}  The PTD shall function with only the power provied by an ATV battery. The PTD shall also be tested while the 
 ATV's engine is actively running and under normal operation.
-    \subparagraph{} \hangindent=4cm The PTD shall have connections that function in any manner.
+    \subparagraph{Prototype Connections}  The PTD shall have connections that function in any manner.
 
 \subsubsection{Environmental Characteristics}
 
 \paragraph{Natural Characteristics}
-    \subparagraph{} \hangindent=4cm The PTD shall be tested for full functionality at both ends of the temperature spectrum.
+    \subparagraph{Temperature Rating}  The PTD shall be tested for full functionality at both ends of the temperature spectrum.
 
 \paragraph{Induced Characteristics}
-    \subparagraph{} \hangindent=4cm The PTD shall function after the drop tests.
-    \subparagraph{} \hangindent=4cm The PTD shall function after the viberation test is performed
-    \subparagraph{} \hangindent=4cm The PTD shall function after the dust test is performed.
+    \subparagraph{Shock Test}  The PTD shall function after the drop tests.
+    \subparagraph{Vibration Test}  The PTD shall function after the viberation test is performed
+    \subparagraph{Dust Test}  The PTD shall function after the dust test is performed.
 
 \subsection{Electromagnetic Interference}
 The EMI shall be measured and shall meet the requirements found in the \textit{Applicable Documents} section of this document.

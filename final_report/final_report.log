@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2015.5.5)  6 DEC 2015 17:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2015.5.5)  11 DEC 2015 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,77 +218,93 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `final_report.lof'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
+[1]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 153.
 
-
-(/usr/share/texmf/tex/latex/base/omscmr.fd
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
- [1] [2] [3] [4]
-Overfull \hbox (25.6388pt too wide) in paragraph at lines 275--277
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 153.
+ [2]
+<../documentation/PTD_Eagle_Schematic.png, id=28, 660.96938pt x 415.5525pt>
+File: ../documentation/PTD_Eagle_Schematic.png Graphic file (type png)
+
+<use ../documentation/PTD_Eagle_Schematic.png>
+Package pdftex.def Info: ../documentation/PTD_Eagle_Schematic.png used on input
+ line 184.
+(pdftex.def)             Requested size: 330.48387pt x 207.77574pt.
+ [3 <../documentation/PTD_Eagle_Schematic.png>]
+<../documentation/block_diagram.png, id=34, 900.36375pt x 628.3475pt>
+File: ../documentation/block_diagram.png Graphic file (type png)
+
+<use ../documentation/block_diagram.png>
+Package pdftex.def Info: ../documentation/block_diagram.png used on input line 
+237.
+(pdftex.def)             Requested size: 225.09038pt x 157.08649pt.
+ [4] [5 <../documentation/block_diagram.png>]
+Overfull \hbox (20.46796pt too wide) in paragraph at lines 302--304
 []\OT1/cmr/bx/n/10.95 Test \OT1/cmr/m/n/10.95 - The PTD shall func-tion af-ter 
-the vib-er-a-tion test is per-formed. | re-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 305--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--319
-
+the vi-bra-tion test is per-formed. | re-
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 319--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--334
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--344
+Underfull \hbox (badness 10000) in paragraph at lines 335--340
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 344--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--354
+Underfull \hbox (badness 10000) in paragraph at lines 349--352
 
  []
 
-[8] (./final_report.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--365
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 370--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--386
+
+ []
+
+[9] [10] (./final_report.aux) ) 
 Here is how much of TeX's memory you used:
- 3412 strings out of 493315
- 47046 string characters out of 6145894
- 120215 words of memory out of 5000000
- 6813 multiletter control sequences out of 15000+600000
+ 3427 strings out of 493315
+ 47495 string characters out of 6145894
+ 120231 words of memory out of 5000000
+ 6824 multiletter control sequences out of 15000+600000
  13851 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,8n,35p,265b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
-xmf/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on final_report.pdf (11 pages, 159125 bytes).
+</usr/share/texmf/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on final_report.pdf (13 pages, 290864 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

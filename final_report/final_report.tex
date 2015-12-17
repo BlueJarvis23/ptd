@@ -71,6 +71,7 @@
 %   \centering
 %       \includegraphics[scale=0.4]{Circuit_Schmatic.png}
 %   \caption{Circuit Schematic}
+%   \label{fig:marker}
 %\end{figure}
 %
 %   \begin{figure}[H]
@@ -103,14 +104,25 @@
 \pagenumbering{arabic}
 
 \section{Executive Summary}
+The PTD is a Passive Tracking Device that allows users to receive SMS messages updating them on the current location of an All Terrain Vehichle (ATV). Passive solutions differ
+from active solutions in that they require less power and are less expensive for the users on a monthly service contract. This device is targeted for 
+enterprise use to help track large fleects of ATVs. This document provides an overview of the components and methods used to create the PTD and discuss design tradeoffs during the design process. The PTD completed 
+the specifications from the \textit{Specifcation Document} and was a valid proof of concept for future Passive Tracking Device development. 
 
+The PTD is composed of four primary subsytems. These subsystems include the: Microcontroller, Cell Module, GPS Module, and Power Regulator. The microcontroller receives the raw
+GPS data from the GPS Module, converts this data into a human friendly form, and composes and transmits an SMS message to a pre-determined cell number. For further details
+see the Methods section of this document. 
+
+Although originally developed for enterprise use throughout the design of the PTD it has been realized that the PTD can also function just as well for personal use for tracking
+both ATVs and full-sized vehichles. The price of the PTD and cell service are inexpensive enough for the general public as well as small and large businesses. 
+ 
 \section{Introduction}
 There are many businesses that use ATVs (All Terrain Vehicles) to accomplish their work. These businesses range from contruction companies to civil
 engineering firms, to the National Forest Service. Many times the larger the company the harder it is to manage the fleet of vehicles. The task of
 keeping track of these vehicles is further compounded by human error as well as geographical isolation and dispersion of resources. These businesses
 need a device that facilitates the management of their fleet. 
 
-\subsubsection{Introduction}
+\subsection{Introduction}
 There are many tracking solutions available for public and enterprise use but they generally all have the same problem. They are active tracking 
 solutions. This means that the vehicle being tracked can only be tracked in real-time. The client of one of these active solutions could use the 
 monitoring software to see on a map the location and movements of the vehicles in their fleet. While there are applications where 
@@ -128,7 +140,7 @@ active solutions the tracking bug can be made cheaper, smaller, more power effic
 regarding this topic.}
 
 
-\subsubsection{Problem}
+\subsection{Problem}
 The PTD is targeted at making this task considerably easier. 
 The PTD, once installed in an ATV, uses the internal battery of the ATV to periodically transmit it's location to the managing individual. This will help 
 monitor vehicle usage as well as recover vehicles in the event of theft.
@@ -164,14 +176,24 @@ The Tiva-C microcontroller operates at 16 MHz by default. I chose to use this de
 if I had increased it then it would have required more power. I chose to activate three of the available eight UART communication modules for the PTD. I needed 
 one UART module for each of the following: receive GPS location from GPS Module, send formatted GPS location as a message to the Cell Module for SMS tranmission,
 and one to allow the client easy cell number destination configuration for text messages. I chose to use interrupts instead of pulling a status bit for each of
-the UART modules to make code more understandable and maintainable. \textcolor{Red}{Possibly put wiring diagram here somewhere}  
+the UART modules to make code more understandable and maintainable. To better understand how the microcontroller is connected to the other components of the PTD please see
+Figure: \ref{fig:wiring_diagram}. 
+
+\begin{figure}
+    \centering
+        \includegraphics[scale=0.5]{../documentation/PTD_Eagle_Schematic.png}
+    \caption{PTD Wiring Diagram}
+    \label{fig:wiring_diagram}
+\end{figure}
 
 
 \subsection{Cell Module}
-The Adafruit FONE 1946 Cell Module has a BOD detecting UART module that detects the transmission speed from the communicating system and 
+The Adafruit FONA 1946 Cell Module has a BOD detecting UART module that detects the transmission speed from the communicating system and 
 replies at the same speed. Because of this convenient feature I used 4800 BOD to communicate with the Cell Module because the GPS Module requires 4800 BOD. This 
-allowed me to simplify my configuration for all UART modules by using the same speed configuration for all modules. This module uses the common AT command set to
-control cellular functions. 
+allowed me to simplify my configuration for all UART modules by using the same speed configuration. This module uses the common AT command set to
+control cellular functions. To connect to a valid US cell network a pre-paid T-Mobile SIM card was purchased because of the low price point and lack of annual contract. 
+This SIM card costs 10 cents per message. With this cost the PTD can send an SMS message update once every 8 hours for only 30 cents a day. This is much cheaper than other options on 
+the market today. 
 
 
 \subsection{GPS Module}
@@ -205,12 +227,17 @@ The PTD system will be a passive system, meaning that the PTD will power down to
 trigger it will power up and transmit it's location to the PTDs owner via a cell network. There is no plan for the owner of the PTD to be able to 
 activate the device externally. The PTD shall opperate in this power-up, transmit location, power-down sequence.
 
-The PTD designed follows the block diagram in Figure: \textcolor{Red}{number}  shows that all sub-system functions have been used to complete with the clients expectations.
+The PTD designed follows the block diagram in Figure: \ref{fig:block_diagram} which shows that all sub-system functions have been used to complete with the clients expectations.
 
 \subsubsection{Interface Description/Functional Block Diagram}
 The PTD used a micro-controller to act as a intermediary logic location for the signals between the GPS and Cell Module. All UART communication used in the project is configured to run
-at 4800 BOD.
-\textcolor{Red}{Put block diagram here}
+at 4800 BOD. The block diagram of the PTD can be seen in Figure: \ref{fig:block_diagram}.
+\begin{figure}
+    \centering
+        \includegraphics[scale=0.25]{../documentation/block_diagram.png}
+    \caption{PTD Block Diagram}
+    \label{fig:block_diagram}
+\end{figure}
 
 \subsection{Characteristics}
 The following section provides a technical summary of the PTD's characteristics.
@@ -220,11 +247,11 @@ To comply with the specification document the PTD must complete tests or justify
 
 \paragraph{Physical Characteristics}
 The PTD shall meet the following physical requeirements:
-    \subparagraph{Form Factor}  The PTD shall conform to the following form factor: 16cm by 8cm by 5cm This is a test to see what is happeneind with the hanging indent 
+    \subparagraph{Form Factor}  The PTD shall conform to the following form factor: 16cm by 8cm by 5cm.
         \begin{description}
             \setlength{\itemindent}{1em}
             \item{\textbf{Test} -} The PTD shall be placed in an small box of dimention stated in requirements.
-            \item{\textbf{Result} -} \textcolor{Red}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Red}{Failed:} The PTD measures 10.5cm by 6.5cm by 5.5cm. These dimensions do not fit inside a box of the specified dimensions. 
         \end{description}
 
 \paragraph{Electrical Characteristics}
@@ -234,14 +261,14 @@ The PTD shall meet the following electrical requirements:
             \setlength{\itemindent}{1em}
             \item{\textbf{Test} -} The PTD shall function with only the power provied by an ATV battery. The PTD shall also be tested while the ATV's engine is actively running and under normal operation.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} After hooking the PTD to the ATv it functioned properly using only the ATV battery.
         \end{description}
     \subparagraph{Prototype Connections}  For the purposes of proof of concept the PTD may make use of a breadboard to connect the components.
         \begin{description}
             \setlength{\itemindent}{1em}
-            \item{\textbf{Test} -} The PTD shall have connections that function, The design of these connections is not specified in the \textit{Specifications Document}.
+            \item{\textbf{Test} -} The PTD shall have connections that function, The design of these connections is not specified in the \textit{Specification Document}.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} The manner of connecting the components together was not specified and therefore is an automatic pass. 
         \end{description}
 
 \subsubsection{Environmental Characteristics}
@@ -255,7 +282,7 @@ environments that would control the design.
             \setlength{\itemindent}{1em}
             \item{\textbf{Test} -} The PTD shall be tested for full functionality at both ends of the temperature spectrum.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} The PTD was tested at the high of 40$^{\circ}$ C and the low of 0$^{\circ}$ C. It passed under both conditions. 
         \end{description}
 
 \paragraph{Induced Environment Characteristics}
@@ -267,14 +294,14 @@ environments that would control the design.
             \setlength{\itemindent}{1em}
             \item{\textbf{Test} -} The PTD shall function after the drop tests.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} The PTD functions after drop test. 
         \end{description}
     \subparagraph{Vibration Test}  The PTD shall withstand vibrations of 1 ocilations per second with an amplitude of 1.5cm for 1 hour.
         \begin{description}
             \setlength{\itemindent}{1em}
-            \item{\textbf{Test} -} The PTD shall function after the viberation test is performed.
+            \item{\textbf{Test} -} The PTD shall function after the vibration test is performed.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} The PTD functions after vibration test. 
         \end{description}
     \subparagraph{Dust Test}  The PTD shall function in a dusty environment, specifically, the shock and vibration tests shall be repeated 
 after 15 grams of fine sand is applied to the device. 
@@ -282,13 +309,16 @@ after 15 grams of fine sand is applied to the device.
             \setlength{\itemindent}{1em}
             \item{\textbf{Test} -} The PTD shall function after the dust test is performed.
                 \hspace*{4cm}requirements.
-            \item{\textbf{Result} -} \textcolor{Green}{Talk about results}
+            \item{\textbf{Result} -} \textcolor{Green}{Passed:} Shock and Vibration tests were repeated after applying dust and PTD continues to function. 
         \end{description}
 
 \subsection{Electromagnetic Interference}
-The PTD shall conform to the standards found in the \textit{Applicable Documents} section of this document.
-The EMI shall be measured and shall meet the requirements found in the \textit{Applicable Documents} section of this document.
-\textcolor{Red}{Tell them what the applicable documents are or add section}
+The EMI shall be measured and shall meet the requirements found in 
+\begin{itemize}
+    \item The United States (US) FCC Part 15-2008.
+    \item Canada's Industry Canada ICES-003:2004 Issue 4.
+\end{itemize}
+This is to allow for legal manufacturing and usage is the United States and Canada.
 
 \section{Discussion}
 This section is designed to discuss the \textit{Results} section of this document. The methods of testing and possible design modifications resulting from 
@@ -321,6 +351,7 @@ The PTD shall meet the following electrical requirements:
         altered to use perf-board to better secure connections between components. This completes and exceeds the specifications.
 
 \subsubsection{Environmental Characteristics}
+The following sections outlines the Environmental Characteristics associated with the PTD. 
 
 \paragraph{Natural Characteristics}
 The PTD shall meet the following natural evironmental characteristics. The PTD shall meet the requirements of this specification during and 
@@ -347,18 +378,35 @@ environments that would control the design.
         for an hours straight.}
     \subparagraph{Dust Test}  The PTD shall function in a dusty environment, specifically, the shock and vibration tests shall be repeated 
         after 15 grams of fine sand is applied to the device. \newline ~ \newline 
-        Like most American households I didn't has a food scale available so I used a little math to estimate the volume of dirt necessary to represent 15 grams. I know that 4 grams of sugar is about
-        one teaspoon of sugar. Using this rough estimate I used my wifes measuring spoons\footnote{I don't think my wife enjoys it when my experiments infringe on her cooking utinsals.} to gather 4 
-        teaspoons of dirt which I placed in a box with the PTD. I then closed up the box and repeated the shock and vibrations tests. I then used an air compressor to clean off the PTD before verifying
-        that the PTD worked and function was not degraded by the stress.
+        Like most American households I didn't have a food scale available so I used a little math to estimate the volume of dirt necessary to represent 15 grams. I know that 4 grams of sugar is about
+        one teaspoon. Using this rough estimate I used my wife's measuring spoons\footnote{I don't think my wife enjoys it when my experiments infringe on her cooking utensils.} to gather 4 
+        teaspoons of dirt which I placed in a box with the PTD. I then closed up the box and repeated the shock and vibrations tests. I modified the vibrations test this time to avoid having to manually shake 
+        the PTD for an hour, so I placed the PTD and dust box on our dryer and did some laundry. This simulated the same vibration time as the manual test did earlier in the testing phase. I then used an air 
+        compressor to clean off the PTD before verifying that the PTD worked and function was not degraded by the stress.
 
 \subsection{Electromagnetic Interference}
-The PTD shall conform to the standards found in the \textit{Applicable Documents} section of this document.
-\textcolor{Red}{Tell them what the applicable documents are or add section}
-The PTD was create with components that all comply with the electromagnetic interference standards described in the \textit{Applicable Documents} section 
+The PTD was create with components that all comply with the electromagnetic interference standards described in 
+\begin{itemize}
+    \item The United States (US) FCC Part 15-2008.
+    \item Canada's Industry Canada ICES-003:2004 Issue 4.
+\end{itemize}
 and because the normal function of the components was not changed the completed project also conforms to with these standards without needing to be tested.
 
+\subsection{Project Schedule and Budget}
+
+
 \section{Conclusion}
+The PTD functions well as a passive tracking solution. It also completed all of the specifications from the spec document. The PTD will also be much less space intensive when all components are manufactured on a single
+custom PCB. A year ago when I began looking at possible component candidates for this project there were not microcontrollers with cell functionality on a single board, but this is not the case today. 
+There are now solutions such as the Particle Electron that are a microcontroller couples with a cell module on the same board. This would allow easier integration into a tracking device as well as lower
+the power necessary for the device. It would also reduce the cost. Before moving to large scale  manufacturing of the PTD these new alternative components should be explored for possible cost and functionality
+benefits.
+
+To complete this project I decided to make use of the Code Composer Studio (CCS) development suite. I chose CCS primarily because I had never worked with it before and decided to make use of the opportunity 
+to become familiar with another Integrated Design Environment (IDE). This proved to be helpful and detremental to this project's success. It turns out that CCS does not play well with multi-file projects and
+that it incorrectly performs dynamic memory operations on the microcontroller even when it advertises that it does these operations correctly. This caused me much time and frustration debugging operations that
+were syntactically correct but that CCS was implementing incorrectly. To fix these problems I re-wrote many parts of this project in later phases. I think that the PTD is a valid proof of concept of cheap, low 
+power, passive tracking devices that could be used to monitor personal and enterprise vehichles in a cost effective manner. Overall I rate this project as a success.   
 
 \end{document}
 
