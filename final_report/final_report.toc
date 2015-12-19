@@ -41,5 +41,5 @@
 \contentsline {subparagraph}{\numberline {5.1.2.2.2}Vibration Test}{9}
 \contentsline {subparagraph}{\numberline {5.1.2.2.3}Dust Test}{9}
 \contentsline {subsection}{\numberline {5.2}Electromagnetic Interference}{10}
-\contentsline {subsection}{\numberline {5.3}Project Schedule and Budget}{10}
-\contentsline {section}{\numberline {6}Conclusion}{10}
+\contentsline {subsection}{\numberline {5.3}Project Schedule}{10}
+\contentsline {section}{\numberline {6}Conclusion}{11}
